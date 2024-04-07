@@ -1,0 +1,15 @@
+from tkinter import *
+root=Tk()
+root.title("Tkinter")
+root.geometry("700x400+200+50")
+root.resizable(False,False)
+gender=Label(root,text="SELECT YOUR GENDER:-",font=("times new roman",15,"bold"),bg="#262626",fg="white")
+def gender_func():
+    print(gender.get())
+gender.place(x=30,y=40)
+gender=StringVar()
+male=Radiobutton(root,text="MALE",value="male",variable=gender,font=("times new roman",12,"bold")).place(x=50,y=90)
+female=Radiobutton(root,text="FEMALE",value="female",variable=gender,font=("times new roman",12,"bold")).place(x=50,y=140)
+gender.set("male")
+bt1=Button(root,text="Click Me",activebackground="red",activeforeground="white",cursor="hand2",command=gender_func).place(x=300,y=210,width=150,height=50)
+root.mainloop()

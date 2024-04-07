@@ -1,0 +1,28 @@
+from tkinter import *
+from tkinter import ttk
+
+top = Tk()
+top.geometry("200x150")
+
+frame = Frame(top)
+frame.pack()
+label = Label(
+    text="Hello, Tkinter",
+    foreground="pink",  # Set the text color to white
+    background="black",  # Set the background color to black
+    width=10,
+    height=10
+)
+label.pack()
+sizegrip = ttk.Sizegrip(frame)
+sizegrip.pack(expand = True, fill = BOTH, anchor = SE)
+
+
+langs = ["C", "C++", "Java",
+   "Python", "PHP"]
+   
+Combo = ttk.Combobox(frame, values = langs)
+Combo.set("Pick an Option")
+Combo.pack(padx = 5, pady = 5)
+
+top.mainloop()
